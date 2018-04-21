@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <% include ./partials/head %>
+ </head>
+ <body class="container">
+
+ <header>
+   <% include ./partials/nav %> 
+ </header>
+
+ <div class="container" width="900px">
+   <div class="row">
+    <div class="col-md-offset-2 col-md-6">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Update Student Details</div>
+                <div class="panel-body">
+                        
+                    <form action="/edit:<%= user._id %>" method="POST">
+            
+                        <div class="form-group">
+                            
+                            <input type="text" name="name" placeholder= "Your Name" class="form-control" 
+                            value="<%= user.name %>" required>
+                            <input type="hidden" name="id" class="form-control" value="<%= user._id %>" required>
+                        </div>
+            
+                        <div class="form-group">
+                            
+                            <input type="number" name="id_no" placeholder= "Your ID" class="form-control" 
+                            value="<%= user.id_no %>" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            
+                            <input type="email" name="email" placeholder= "Your Email" class="form-control" value="<%= user.email %>" required>
+                        </div>
+                        <div class="form-group">
+                            
+                            <input type="text" name="grade" placeholder= "Your Year" class="form-control" value="<%= user.grade %>" required>
+                        </div>
+                        <div class="form-group">
+                            
+                            <input type="text" name="tname" placeholder= "Your Year Teacher" class="form-control" value="<%= user.tname %>" required>
+                        </div>
+            
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select type="text" name="gender" required>
+                                <option value="<%= user.gender %>"><%= user.gender %></option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>   
+                        
+                        <div class="form-group">
+                            <label>Bio</label>
+                            <textarea name="bio" rows="2" class="form-control"> <%= user.bio %></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-lg">Update</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+       </div>
+    </div>  
+
+  </div>
+
+
+ </body>
+ </html>
